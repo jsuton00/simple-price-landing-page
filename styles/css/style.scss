@@ -1,0 +1,147 @@
+@import "./abstract/mixins";
+@import "./base/colours";
+@import "./base/typography";
+
+body {
+	font-family: $karla;
+	font-size: 1rem;
+}
+
+.container {
+	@include spacing(1.5em, null);
+	&-fluid {
+		@include spacing(1.5em, null);
+	}
+}
+
+.row {
+	@include spacing(1em, null);
+	justify-content: center;
+	align-items: center;
+}
+
+.header-content {
+	@include size-element(100%, 100%);
+	@include spacing(0.5em 1em, 0.5em auto);
+
+	h1 {
+		color: $darkcyan;
+		font-weight: $karla-bold;
+	}
+
+	h3 {
+		color: $brightYellow;
+		font-weight: $karla-bold;
+	}
+
+	h4 {
+		color: $grayishBlue;
+		font-size: 1.5rem;
+		font-weight: $karla-bold;
+
+		span {
+			&::before {
+				content: "\A";
+				white-space: pre-line;
+			}
+		}
+	}
+}
+
+ul,
+ol {
+	display: block;
+	list-style-type: none;
+	@include size-element(100%, 100%);
+	@include spacing(0, 0);
+}
+
+.subscription {
+	background-color: $darkcyan;
+	@include spacing(1em 1.5em, null);
+}
+
+.whyus {
+	background-color: $lightcyan;
+	@include spacing(1em, null);
+}
+
+.content {
+	@include size-element(100%, 100%);
+	@include spacing(1.5em 2em, 0.25em auto);
+	@include flex(column, wrap);
+	justify-content: center;
+	align-items: stretch;
+	&:first-of-type {
+		h4 {
+			color: $lightGray;
+			font-weight: $karla-bold;
+		}
+
+		p {
+			color: $lightGray;
+			font-size: 1.2rem;
+			font-weight: $karla-bold;
+			&:first-of-type {
+				@include spacing(0.25em 0.5em, 0.01875em);
+			}
+		}
+	}
+	&:last-of-type {
+		h4 {
+			color: $lightGray;
+			font-weight: $karla-bold;
+		}
+	}
+}
+
+.whyuslist {
+	@include flex(column, wrap);
+	justify-content: space-around;
+	@include size-element(100%, 100%);
+	@include spacing(0.32em 0, null);
+	color: $lightGray;
+	font-weight: $karla-bold;
+	line-height: 1.5;
+}
+
+.btnField {
+	display: block;
+	position: relative;
+	@include size-element(100%, 100%);
+	text-align: center;
+
+	a {
+		display: block;
+		text-align: center;
+		border: 0;
+		border-radius: 5%;
+		background-color: $brightYellow;
+		@include size-element(100%, null);
+		@include spacing(1em 2em, null);
+	}
+}
+
+.price {
+	display: inline-block;
+	color: $lightGray;
+	font-size: 2.5rem;
+	font-weight: $karla-bold;
+	line-height: 1.2;
+	@include spacing(0.25em, 0 0.25em 0 0);
+}
+
+.attribution {
+	display: block;
+	@include size-element(100%, 100%);
+	text-align: center;
+
+	a {
+		color: $darkcyan;
+		font-size: $karla-bold;
+		&:hover {
+			color: $brightYellow;
+			text-decoration: none;
+		}
+	}
+}
